@@ -1,0 +1,42 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="BookingID" />
+        <br />
+        <label>Adı</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <br />
+        <label>Mail</label>
+        <input type="text" class="form-control" asp-for="Mail" />
+        <br />
+        <label>Giriş Tarihi</label>
+        <input type="date" class="form-control" asp-for="Checkin" />
+        <br />
+        <label>Çıkış Tarihi</label>
+        <input type="date" class="form-control" asp-for="Checkout" />
+        <br />
+        <label>Yetişkin Sayısı</label>
+        <input type="text" class="form-control" asp-for="AdultCount" />
+        <br />
+        <label>Çocuk Sayısı</label>
+        <input type="text" class="form-control" asp-for="ChildCount" />
+        <br />
+        <label>Oda</label>
+        <input type="text" class="form-control" asp-for="SelectRoom" />
+        <br />
+        <label>Özel İstek</label>
+        @Html.TextAreaFor(x=>x.SpecialRequest,10,3, new{ @class="form-control"})
+        <br />
+        <label>Durum</label>
+        <input type="text" class="form-control" asp-for="Status" />
+        <br />
+        <button class="btn mb-1 btn-rounded btn-outline-primary">Güncelle</button>
+    </form>
+
+</div>
+

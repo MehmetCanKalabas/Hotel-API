@@ -1,0 +1,25 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <label>About ID</label>
+        <input type="text" class="form-control" asp-for="AboutID"  />
+        <br />
+        <label>1. Başlık</label>
+        <input type="text" class="form-control" asp-for="Title1" />
+        <br />
+        <label>2. Başlık</label>
+        <input type="text" class="form-control" asp-for="Title2" />
+        <br />
+        <label>İçerik</label>
+        @Html.TextAreaFor(x=>x.Content,10,3, new{ @class="form-control"})
+        <br />
+        <button class="btn mb-1 btn-rounded btn-outline-primary">Güncelle</button>
+    </form>
+   
+</div>
+

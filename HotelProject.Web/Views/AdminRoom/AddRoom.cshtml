@@ -1,0 +1,37 @@
+﻿@model CreateRoomDto
+@{
+    ViewData["Title"] = "AddRoom";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <label>Görsel</label>
+        <input type="text" class="form-control" asp-for="RoomCoverImage" />
+        <br />
+        <label>Oda Numarası</label>
+        <input type="text" class="form-control" asp-for="RoomNumber" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" class="form-control" asp-for="RoomTitle" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" class="form-control" asp-for="RoomPrice" />
+        <br />
+        <label>Yatak Sayısı</label>
+        <input type="text" class="form-control" asp-for="BedCount" />
+        <br />
+        <label>Banyo Sayısı</label>
+        <input type="text" class="form-control" asp-for="BathCount" />
+        <br />
+        <label>Wifi</label>
+        <input type="text" class="form-control" asp-for="Wifi" />
+        <br />
+        <label>İçerik</label>
+        @Html.TextAreaFor(x=>x.Description,10,3, new{ @class="form-control"})
+        <br />
+        <button class="btn mb-1 btn-rounded btn-outline-primary">Ekle</button>
+    </form>
+
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model List<SearchLocationModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Lokasyonlar</h4>
+            </div>
+            <div class="table-responsive">
+                @using(Html.BeginForm("Index","SearchLocationID",FormMethod.Post))
+                {
+                    <label>Şehir Adı</label>
+                    <input type="text" class="form-control" name="cityName">
+                    <br />
+                    <button class="btn mb-1 btn-rounded btn-outline-dark">Şehir Bul</button>
+                }
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lokasyon ID</th>
+                            <th>Adı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                           
+                            <tr>
+                                <th>@item.dest_id</th>
+                                <td>@item.name</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/BookingAdmin/BookingComHotel/" class="btn mb-1 btn-rounded btn-outline-dark">Rezervasyon Ara</a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model List<BookingComModel.Result>
+@{
+    ViewData["Title"] = "BookingComHotel";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Oteller</h4>
+            </div>
+            <div class="table-responsive">
+                @using (Html.BeginForm("BookingComHotel", "BookingAdmin", FormMethod.Post))
+                {
+                    <label>Otel ID</label>
+                    <input type="text" class="form-control" name="cityID">
+                    <br />
+                    <button class="btn mb-1 btn-rounded btn-outline-dark">Ara</button>
+                }
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Otel Adı</th>
+                            <th>Otel Puanı</th>
+                            <th>Detaylar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <th>@count</th>
+                                <td>@item.name</td>
+                                <td>@item.reviewScore</td>
+                                <td><a href="#" class="btn mb-1 btn-rounded btn-outline-dark">Detaylar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
